@@ -1,0 +1,108 @@
+{
+  "version": 9,
+  "features": [
+    {
+      "id": "mode",
+      "type": "select",
+      "group": "Appearance",
+      "label": "Mode",
+      "options": [
+        {
+          "value": "",
+          "label": "Dark"
+        },
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "system",
+          "label": "System",
+          "help": "Follows whatever your operating system is set to."
+        }
+      ]
+    },
+    {
+      "id": "theme",
+      "type": "select",
+      "group": "Appearance",
+      "label": "Theme",
+      "from": "--ggn-themes",
+      "defaultLabel": "Blue Night",
+      "preview": "ramp",
+      "options": [
+        {
+          "value": "abyss",
+          "label": "Abyss",
+          "help": "The same blue, sunk deeper."
+        },
+        {
+          "value": "oled",
+          "label": "OLED",
+          "help": "Pure black on dark, pure white on light. Maximum contrast."
+        },
+        {
+          "value": "graphite",
+          "label": "Graphite",
+          "help": "Neutral greys with the blue cast removed."
+        },
+        {
+          "value": "ember",
+          "label": "Ember",
+          "help": "Warm browns under a copper accent."
+        },
+        {
+          "value": "nocturne",
+          "label": "Nocturne",
+          "help": "Violet surfaces with a matching violet accent."
+        }
+      ]
+    },
+    {
+      "id": "logo",
+      "type": "select",
+      "group": "Appearance",
+      "label": "Header logo",
+      "from": "--ggn-logos",
+      "defaultLabel": "Image",
+      "options": [
+        {
+          "value": "wordmark",
+          "label": "Wordmark",
+          "help": "Draws the name as text in the theme’s own colours. Pages with a game theme keep their own logo."
+        }
+      ]
+    },
+    {
+      "id": "buffs",
+      "type": "select",
+      "group": "Layout",
+      "label": "Global buffs",
+      "options": [
+        {
+          "value": "",
+          "label": "Strip"
+        },
+        {
+          "value": "float",
+          "label": "Floating",
+          "help": "Puts the buff icons back in the top-left corner so they no longer take up page height. Wide screens only — below 1200px there is no room beside the logo."
+        }
+      ]
+    },
+    {
+      "id": "toolbox",
+      "type": "toggle",
+      "group": "Layout",
+      "label": "Toolbox in the corner",
+      "help": "Moves the Toolbox and Refresh Data links up into the top-right corner instead of a row of their own."
+    },
+    {
+      "id": "flat-bg",
+      "type": "toggle",
+      "group": "Layout",
+      "label": "Flat background",
+      "help": "Drops the faint game pattern behind the page."
+    }
+  ]
+}
