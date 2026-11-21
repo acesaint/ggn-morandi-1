@@ -7,7 +7,7 @@
 - 仓库：`acesaint/ggn-morandi-1`，public；远端 `origin` 为 SSH `git@github.com:acesaint/ggn-morandi-1.git`。
 - 已核实 GitHub Pages 来源设置由用户在 Settings → Pages 选择 `main`；线上 Pages 域名为 `https://acesaint.github.io/ggn-morandi-1/`。
 - `main` 基线提交：`82f9d692d3fb7c2cabbe81741695c368e77bcf10`（`82f9d69`，`Add concise theme installation README`）。
-- 浅色工作分支：`morandi-light-warm-paper`；本阶段计划检查点：`1a3ff2142ba941c2241ef4eaf549b8c2c99b2ef1`（`1a3ff21`）。共同基线为 `82f9d692d3fb7c2cabbe81741695c368e77bcf10`。分支相对 `main` **仅新增本计划文件**；无 CSS、JS、HTML 或资源差异。
+- 浅色工作分支：`morandi-light-warm-paper`；阶段 0 完成后的分支 HEAD：`bb103d133399c82a37f7cef26b497f77b694c731`（`bb103d1`，`Record light theme phase zero safety baseline`）。首个计划检查点为 `1a3ff2142ba941c2241ef4eaf549b8c2c99b2ef1`（`1a3ff21`）；共同基线为 `82f9d692d3fb7c2cabbe81741695c368e77bcf10`。分支相对 `main` **仅新增本计划文件**；无 CSS、JS、HTML 或资源差异。
 - 本地当前工作副本：`/Users/xxx/WorkBuddy/spaces/2026_11_18_01-41-05/ggn-blue-night-work/ggn-blue-night-main`，当前分支为 `morandi-light-warm-paper`；本阶段校验时工作区干净。
 
 ### 主分支关键文件校验
@@ -45,8 +45,8 @@
 
 ### 基线验证结果
 
-- 远端分支复核：`main`=`82f9d692d3fb7c2cabbe81741695c368e77bcf10`；`morandi-light-warm-paper`=`1a3ff2142ba941c2241ef4eaf549b8c2c99b2ef1`。
-- `git diff --name-status origin/main...origin/morandi-light-warm-paper` 唯一结果：`A LIGHT_THEME_PLAN.md`；净差异 `70 insertions / 0 deletions`。无主题 CSS 被写入或改变。
+- 远端分支复核：`main`=`82f9d692d3fb7c2cabbe81741695c368e77bcf10`；阶段 0 完成后的 `morandi-light-warm-paper`=`bb103d133399c82a37f7cef26b497f77b694c731`。
+- `git diff --name-status origin/main...origin/morandi-light-warm-paper` 唯一结果：`A LIGHT_THEME_PLAN.md`；首个计划检查点净差异 `70 insertions / 0 deletions`，阶段 0 基线记录追加到同一文件。无主题 CSS 被写入或改变。
 - 深绿主题 CSS 本地 SHA-256 与线上 Pages CSS 完全一致：`8ba14f2645564e1ba6a988a410d72661de81da592e533724f27572d90e85b92a`；线上内容 290,893 bytes。新 Pages 与 jsDelivr URL 均实测 `HTTP 200` / `text/css` / 290,893 bytes；旧的 `blue-night_regular.css` Pages 地址为 404，今后使用新文件名地址。
 - Pages API 当前不提供公开读取配置（返回 404），但新文件 Pages URL 已实际可读为 CSS，证实 `main` Pages 构建已生效。**因此不需要改发布地址域名或路径**；继续用 `https://acesaint.github.io/ggn-morandi-1/ggn-morandi-dark-green.css` 即可。
 - 验证边界：完成 Git 基线、哈希、分支差异及公开 HTTP/MIME/字节核对；未做 GGn 登录态浏览器视觉检查，也未做浅色视觉实现。
