@@ -3731,7 +3731,7 @@ img[src="static/forums/locked_read.png"] {
   font-weight: 700;
   text-align: center;
   border-radius: 4px;
-  background-color: var(--fg-orange);
+  background-color: color-mix(in srgb, var(--fg-orange) 45%, var(--surface-0));
   border: none;
   margin: 1rem auto 1rem;
   box-shadow: var(--shadow-1);
@@ -3741,7 +3741,7 @@ img[src="static/forums/locked_read.png"] {
 .alert-bar a,
 .alert--warning a,
 .alert--error a {
-  color: var(--ink-3);
+  color: var(--fg-accent-soft);
 }
 
 .alert a:hover,
@@ -10364,7 +10364,7 @@ tr.likes > td:last-child > br:has(+ strong + em) {
   border: 1px solid var(--line-2);
   border-radius: 5px;
   color: var(--ink-2);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-1);
 }
 
 .tooltipster-default .tooltipster-content {
