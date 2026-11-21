@@ -57,26 +57,28 @@
 | --surface-9 | `#68615B` | 结构填充（斑马纹/hover） |
 | --line-1 / 2 / 3 / 4 | `#322F28` / `#555045` / `#756D60` / `#948C7F` | 发丝线 → 最强边框 |
 | --ink-0 … --ink-8 | `#EAE2D5` `#D8D0C2` `#CFC7B8` `#C4B8A5` `#BCB0A0` `#B0A696` `#A69C8C` `#928B7B` `#857E6E` | 羊皮纸正文 → 最淡提示 |
-| --fg-accent / -soft | `#D8A37E` / `#E0B896` | 低饱和陶土 / 柔陶土 |
+| --fg-accent / -soft | `#D8A37E` / `#E5C09E` | 低饱和陶土 / 柔陶土 |
 | --control | `#AAB49A` | 灰鼠尾草控件 |
 | --on-fill | `#1D1B18` | 填充上文字（深炭） |
 | --fg-good / bad / warn | `#A6BD91` / `#E39A86` / `#D5B36F` | 成功 / 错误 / 警告 |
 | --fg-bad-soft | `#DB8E7A` | Delete 静止态 |
 | --fg-bonus / cost | `#B7C49C` / `#D2BC8E` | 加分 / 消耗 |
 | --fg-error / error-link / report | `#E5A79A` / `#EDBCAE` / `#DCA28E` | 错误文字/链接/举报 |
-| --fg-orange | `#DCA87E` | 告警条基色 |
+| --fg-orange | `#D2A278` | 告警条基色（dark 公式 45% over surface-0） |
 | --state-leeching/seeding/uploaded/snatched | `#A6BD91` `#D5B36F` `#C9B4C4` `#DCA28E` | 做种状态四色 |
 | --cat-stream/conference/birthday | `#A3BDB2` `#D2BC8E` `#CBB3C4` | 分类色 |
 | --ratio-0…9 | `#DCA28E` → `#A6BD91` 插值 | 分享率红→绿 |
 | --shadow-1/2/3 | `rgba(0,0,0,α)`（继承父主题） | 纯黑阴影 |
 | --surface-deep-rgb / --surface-2-rgb | `29, 27, 24` / `37, 35, 31` | 与 s0/s2 对应 |
 
-**关键对比度**：正文 ink-0/surface-2 **12.20:1**、ink-0/surface-3 10.68:1；强调 fg-accent/surface-2 **7.07:1**、s0–s5 全部 ≥4.5；按钮深字/控件 **7.94:1**；alert 混底 `#504539` 上正文 7.29:1、强调链接 4.22:1。
+**关键对比度**：正文 ink-0/surface-2 **12.20:1**、ink-0/surface-3 10.68:1；强调 fg-accent/surface-2 **7.07:1**、s0–s5 全部 ≥4.5；按钮深字/控件 **7.94:1**；告警底 `#6E5843`（**dark 公式：45% fg-orange over surface-0**，继承父主题，非浅色的 14%/surface-4）上正文 5.20:1、告警链接（继承父主题用 --fg-accent-soft）3.94:1。
+
+> Token 微调记录：首轮 `--fg-orange #DCA87E` / `--fg-accent-soft #E0B896` 在 dark 告警公式下链接仅 3.50:1（父主题实测 3.89），调整为 `#D2A278` / `#E5C09E` 后告警链接 3.94:1 ≥ 父主题水平，其余用途（独立文字 6.86–7.51:1、环/图标 ≥7.18:1）全部改善。
 
 ## 三、深色矩阵的已批准适配（与浅色 135 项结构的差异）
 
 1. **fg-accent 文字范围**：≥4.5:1 于 surface-0…5（全部承载文字的表面）；surface-6…9 属结构填充（斑马/hover），强调色仅以非文字形式出现，最低值 2.74:1 记录在案。父主题 dark-green 同位置实测 s6≈4.27、s9≈3.16 —— 本主题陶土饱和度更高，在结构填充上更低，属色相强度换取向，登记为可接受。
-2. **alert 链接 ≥4.0:1**（父主题同位置实测 ≈4.09，夜沙 4.22）。
+2. **告警链接 ≥3.9:1**（dark 告警公式 45%/surface-0；父主题同位置实测 ≈3.89，夜沙 3.94；链接 Token 继承父主题为 --fg-accent-soft）。
 3. **line-2 输入框边 ≥1.9:1**（夜沙 1.96，优于父主题 ≈1.65）；**line-3 ≥3.0:1**（夜沙 3.07，优于父主题 ≈2.0）。
 4. 其余配对（正文、次级墨、链接、按钮、语义色、比例梯、读帖图标、悬停 delta）与浅色矩阵同阈值。
 

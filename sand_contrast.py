@@ -89,10 +89,10 @@ D = {
     "ink-0": "#EAE2D5", "ink-1": "#D8D0C2", "ink-2": "#CFC7B8",
     "ink-3": "#C4B8A5", "ink-4": "#BCB0A0", "ink-5": "#B0A696",
     "ink-6": "#A69C8C", "ink-7": "#928B7B", "ink-8": "#857E6E",
-    "fg-accent": "#D8A37E", "fg-accent-soft": "#E0B896",
+    "fg-accent": "#D8A37E", "fg-accent-soft": "#E5C09E",
     "control": "#AAB49A", "on-fill": "#1D1B18",
     "fg-good": "#A6BD91", "fg-bad": "#E39A86", "fg-warn": "#D5B36F",
-    "fg-bad-soft": "#DB8E7A", "fg-orange": "#DCA87E",
+    "fg-bad-soft": "#DB8E7A", "fg-orange": "#D2A278",
     "fg-error": "#E5A79A", "fg-error-link": "#EDBCAE",
     "fg-report": "#DCA28E", "fg-bonus": "#B7C49C", "fg-cost": "#D2BC8E",
     "state-leeching": "#A6BD91", "state-seeding": "#D5B36F",
@@ -102,7 +102,9 @@ D = {
 }
 for i in range(10):
     D["ratio-%d" % i] = interp("#DCA28E", "#A6BD91", i / 9.0)
-D_ALERT = mix(D["fg-orange"], D["surface-4"], 14)
+# dark alert: the dark parent formula is 45% fg-orange over surface-0
+# (not the light 14%/surface-4); the dark alert link token is fg-accent-soft.
+D_ALERT = mix(D["fg-orange"], D["surface-0"], 45)
 
 ALL_SURFACES = ("surface-0", "surface-1", "surface-2", "surface-3", "surface-4",
                 "surface-5", "surface-6", "surface-7", "surface-8", "surface-9")
@@ -112,7 +114,8 @@ SEMANTIC = ("fg-good", "fg-bad", "fg-warn", "fg-orange", "fg-error",
             "cat-stream", "cat-conference", "cat-birthday")
 
 def run_matrix(T, ALERT_BG, label, accent_text_need, accent_fill_need,
-               alert_link_need, ink6_well_need, line2_need, extra):
+               alert_link_need, ink6_well_need, line2_need, extra,
+               alert_pct, alert_base, alert_link_token):
     """extra: ('light'|'dark') selects the adapted guard pairs."""
     rows, fails = [], []
 
@@ -165,9 +168,12 @@ def run_matrix(T, ALERT_BG, label, accent_text_need, accent_fill_need,
         P("fg-accent on %s (%s)" % (s, tag), T["fg-accent"], T[s], need)
     for s in ("surface-0", "surface-2", "surface-3", "surface-4"):
         P("fg-accent-soft ring/icon on %s" % s, T["fg-accent-soft"], T[s], 3.0)
-    # alert block
-    P("ink-0 on alert mix 14%% (%s)" % ALERT_BG, T["ink-0"], ALERT_BG, 4.5)
-    P("fg-accent link on alert mix", T["fg-accent"], ALERT_BG, alert_link_need)
+    # alert block (light: mix 14% over surface-4, link fg-accent;
+    #             dark: mix 45% over surface-0, link fg-accent-soft)
+    P("ink-0 on alert mix %d%% over %s (%s)" % (alert_pct, alert_base, ALERT_BG),
+      T["ink-0"], ALERT_BG, 4.5)
+    P("%s link on alert mix" % alert_link_token, T[alert_link_token], ALERT_BG,
+      alert_link_need)
     # semantic text/icon colours (12-13px text)
     for k in SEMANTIC:
         P("%s on surface-2 (semantic)" % k, T[k], T["surface-2"], 4.5)
@@ -209,9 +215,11 @@ def run_matrix(T, ALERT_BG, label, accent_text_need, accent_fill_need,
     return rows, fails
 
 light_rows, light_fails = run_matrix(
-    L, L_ALERT, "warm-sand", 4.5, 4.5, 4.5, 4.1, 1.9, "light")
+    L, L_ALERT, "warm-sand", 4.5, 4.5, 4.5, 4.1, 1.9, "light",
+    14, "surface-4", "fg-accent")
 dark_rows, dark_fails = run_matrix(
-    D, D_ALERT, "night-sand", 4.5, 2.7, 4.0, 4.1, 1.9, "dark")
+    D, D_ALERT, "night-sand", 4.5, 2.7, 3.9, 4.1, 1.9, "dark",
+    45, "surface-0", "fg-accent-soft")
 
 W = 62
 out = []
@@ -226,7 +234,9 @@ for theme, rows, fails, ALERT_BG, T in (
     for name, fg, bg, need, r, ok in rows:
         out.append("%-52s %s  fg=%-9s bg=%-9s %5.2f:1 (need %.1f)"
                    % (name, "PASS" if ok else "FAIL", fg, bg, r, need))
-    out.append("alert mix: color-mix(fg-orange 14%%, surface-4) = %s" % ALERT_BG)
+    out.append("alert mix: color-mix(fg-orange %d%%, %s) = %s"
+               % (14 if T is L else 45, "surface-4" if T is L else "surface-0",
+                  ALERT_BG))
     for i in range(10):
         out.append("ratio-%d = %s" % (i, T["ratio-%d" % i]))
     out.append("%s: %d checks, %d failures" % (theme, len(rows), len(fails)))

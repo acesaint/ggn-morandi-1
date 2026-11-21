@@ -574,7 +574,7 @@ html.busy-cursor * {
   --ink-7: #928b7b;
   --ink-8: #857e6e;
   --fg-accent: #d8a37e;
-  --fg-accent-soft: #e0b896;
+  --fg-accent-soft: #e5c09e;
   --fg-good: #a6bd91;
   --fg-bad: #e39a86;
   --fg-warn: #d5b36f;
@@ -608,7 +608,7 @@ html.busy-cursor * {
   --fg-error: #e5a79a;
   --fg-error-link: #edbcae;
   --fg-report: #dca28e;
-  --fg-orange: #dca87e;
+  --fg-orange: #d2a278;
 }
 
 html {

@@ -63,7 +63,7 @@ NIGHT_SAND = {
     "--ink-0": "#eae2d5", "--ink-1": "#d8d0c2", "--ink-2": "#cfc7b8",
     "--ink-3": "#c4b8a5", "--ink-4": "#bcb0a0", "--ink-5": "#b0a696",
     "--ink-6": "#a69c8c", "--ink-7": "#928b7b", "--ink-8": "#857e6e",
-    "--fg-accent": "#d8a37e", "--fg-accent-soft": "#e0b896",
+    "--fg-accent": "#d8a37e", "--fg-accent-soft": "#e5c09e",
     "--fg-good": "#a6bd91", "--fg-bad": "#e39a86", "--fg-warn": "#d5b36f",
     "--fg-bad-soft": "#db8e7a", "--control": "#aab49a", "--on-fill": "#1d1b18",
     "--shadow-1": "0 2px 8px rgba(0, 0, 0, 0.16)",
@@ -74,7 +74,7 @@ NIGHT_SAND = {
     "--cat-stream": "#a3bdb2", "--cat-conference": "#d2bc8e",
     "--cat-birthday": "#cbb3c4",
     "--fg-bonus": "#b7c49c", "--fg-cost": "#d2bc8e", "--fg-error": "#e5a79a",
-    "--fg-error-link": "#edbcae", "--fg-report": "#dca28e", "--fg-orange": "#dca87e",
+    "--fg-error-link": "#edbcae", "--fg-report": "#dca28e", "--fg-orange": "#d2a278",
 }
 for _i in range(10):
     NIGHT_SAND["--ratio-%d" % _i] = interp("#dca28e", "#a6bd91", _i / 9.0)

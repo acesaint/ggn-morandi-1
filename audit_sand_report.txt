@@ -1,0 +1,57 @@
+PASS ggn-morandi-warm-sand.css root tokens match spec     58 tokens
+PASS ggn-morandi-night-sand.css root tokens match spec    58 tokens
+PASS ggn-morandi-warm-sand.css structural parity vs parent !important=367 :has(=239 @media=38 rgba(var(=3 brightness(=9 invert(=4
+PASS ggn-morandi-night-sand.css structural parity vs parent !important=367 :has(=239 @media=38 rgba(var(=3 brightness(=10 invert(=6
+PASS ggn-morandi-warm-sand.css diff limited to whitelist  58 changed lines, 0 unexpected
+PASS ggn-morandi-night-sand.css diff limited to whitelist 60 changed lines, 0 unexpected
+PASS ggn-morandi-warm-sand.css no live backdrop-filter    0
+PASS ggn-morandi-warm-sand.css rgba(var() limited to 3 overlays 3
+PASS ggn-morandi-night-sand.css no live backdrop-filter   0
+PASS ggn-morandi-night-sand.css rgba(var() limited to 3 overlays 3
+PASS ggn-morandi-warm-sand.css warm-paper tokens purged   leftovers: []
+PASS ggn-morandi-warm-sand.css dark ramp never leaked     leaked: []
+PASS ggn-morandi-night-sand.css dark-green tokens purged  leftovers: []
+PASS ggn-morandi-night-sand.css light ramp never leaked   leaked: []
+PASS ggn-morandi-warm-sand.css alert mix 14% on surface-4 
+PASS ggn-morandi-warm-sand.css alert link uses fg-accent  
+PASS ggn-morandi-warm-sand.css wordmark edge sand base    
+PASS ggn-morandi-warm-sand.css hr hairline tokenized      
+PASS ggn-morandi-warm-sand.css no brightness(5) white-flash 
+PASS ggn-morandi-warm-sand.css dialog icons not inverted  
+PASS ggn-morandi-warm-sand.css drag clone shadow warm     
+PASS ggn-morandi-warm-sand.css cover wash for light       
+PASS ggn-morandi-warm-sand.css search input text body-safe 
+PASS ggn-morandi-warm-sand.css buff hover presses deeper (surface-5) 
+PASS ggn-morandi-night-sand.css alert mix 45% on surface-0 (dark formula) 
+PASS ggn-morandi-night-sand.css alert link inherits fg-accent-soft 
+PASS ggn-morandi-night-sand.css wordmark edge warm base   
+PASS ggn-morandi-night-sand.css hr hairline tokenized     
+PASS ggn-morandi-night-sand.css cover wash for dark inherited 
+PASS ggn-morandi-night-sand.css drag clone shadow dark inherited 
+PASS ggn-morandi-night-sand.css buff hover dark inherited (surface-4) 
+PASS ggn-morandi-warm-sand.css no blue-night swatch selector 
+PASS ggn-morandi-night-sand.css blue-night swatch block inherited from parent 
+PASS ggn-morandi-warm-sand.css all 5 theme variant blocks kept abyss,oled,graphite,ember,nocturne
+PASS ggn-morandi-night-sand.css all 5 theme variant blocks kept abyss,oled,graphite,ember,nocturne
+PASS ggn-morandi-warm-sand.css prefers-reduced-motion block 
+PASS ggn-morandi-warm-sand.css keyframes inventory == parent jelly-effect
+PASS ggn-morandi-warm-sand.css :focus-visible rules present 2 rules
+PASS ggn-morandi-night-sand.css prefers-reduced-motion block 
+PASS ggn-morandi-night-sand.css keyframes inventory == parent jelly-effect
+PASS ggn-morandi-night-sand.css :focus-visible rules present 2 rules
+PASS ggn-morandi-warm-sand.css body colours in documented set unknown: none | 18 hits
+PASS ggn-morandi-night-sand.css body colours in documented set unknown: none | 19 hits
+PASS ggn-morandi-warm-sand.css section 10 equals parent   S10 child L12714 vs parent L12714
+PASS ggn-morandi-night-sand.css section 10 equals parent  S10 child L12715 vs parent L12715
+PASS ggn-morandi-warm-sand.css site @imports unchanged    3
+PASS ggn-morandi-warm-sand.css font faces use relative repo paths 12 font refs
+PASS ggn-morandi-warm-sand.css wordmark font embedded     
+PASS ggn-morandi-night-sand.css site @imports unchanged   3
+PASS ggn-morandi-night-sand.css font faces use relative repo paths 12 font refs
+PASS ggn-morandi-night-sand.css wordmark font embedded    
+PASS parent ggn-morandi-dark-green.css unchanged          
+PASS parent ggn-morandi-warm-paper.css unchanged          
+PASS contrast suite reference                             run: python3 sand_contrast.py (268 checks)
+
+============================================================
+SAND PAIR AUDIT: 54 checks, 0 failures
