@@ -4257,6 +4257,10 @@ ul.nobullet:has(> .similar_group) > li:not(.similar_group) {
   background: var(--fg-accent);
 }
 
+#vote_matches .head:hover > strong > span::before {
+  color: var(--on-fill);
+}
+
 .similar_group {
   width: 84px;
   flex: 0 0 auto;
@@ -8779,7 +8783,7 @@ body#calendar .month-picker-open-button .ui-icon {
 }
 
 body#calendar .month-picker-open-button:hover .ui-icon {
-  background-color: var(--ink-0);
+  background-color: var(--on-fill);
 }
 
 .change_month_links {
