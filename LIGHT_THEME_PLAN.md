@@ -1,5 +1,56 @@
 # GGn 浅色莫兰迪主题：暖纸感方案与执行计划
 
+## 阶段 0 — 安全基线记录（2026-11-21）
+
+### 仓库与分支基线
+
+- 仓库：`acesaint/ggn-morandi-1`，public；远端 `origin` 为 SSH `git@github.com:acesaint/ggn-morandi-1.git`。
+- 已核实 GitHub Pages 来源设置由用户在 Settings → Pages 选择 `main`；线上 Pages 域名为 `https://acesaint.github.io/ggn-morandi-1/`。
+- `main` 基线提交：`82f9d692d3fb7c2cabbe81741695c368e77bcf10`（`82f9d69`，`Add concise theme installation README`）。
+- 浅色工作分支：`morandi-light-warm-paper`；本阶段计划检查点：`1a3ff2142ba941c2241ef4eaf549b8c2c99b2ef1`（`1a3ff21`）。共同基线为 `82f9d692d3fb7c2cabbe81741695c368e77bcf10`。分支相对 `main` **仅新增本计划文件**；无 CSS、JS、HTML 或资源差异。
+- 本地当前工作副本：`/Users/xxx/WorkBuddy/spaces/2026_11_18_01-41-05/ggn-blue-night-work/ggn-blue-night-main`，当前分支为 `morandi-light-warm-paper`；本阶段校验时工作区干净。
+
+### 主分支关键文件校验
+
+下面列的是基线 `main` 的 Git blob SHA-1（用于精确核对主分支对象）以及本地内容 SHA-256（作为外部样式字节校验基准）。后续阶段不得无理由改变这些深绿基线对象。
+
+| 文件 | `main` Git blob SHA-1 | 本地 SHA-256 |
+|---|---|---|
+| `ggn-morandi-dark-green.css` | `f6157fea72707cb6a3448016a9de628b3aeb05c5` | `8ba14f2645564e1ba6a988a410d72661de81da592e533724f27572d90e85b92a` |
+| `README.md` | `daa8916f054cc0ff8d13a322176d1a09c45093ee` | `ea28ef939d13628f2dcf0b2c9c72380b043470af4e6aaa2c15c6169fc641bf96` |
+| `game-bg.svg` | `5c214f65f9706e114f8bd9bd0eb1e3db2420b346` | `a0c39e25cff97c4b45ff7a5c4f2991034216191fa5268cb02ee54fb9b3d3e361` |
+| `gazellegames-logo.png` | `e0c3950f7c2ae2e065d6911bad12fb5be3faaa24` | `7fd0c4463925a4405c717f3785dbcfd7e760e9afba835c9986ced21556488029` |
+| `blue-night_oled.css` | `ccd1a8d5b95caa0b7405647115693331cea1af00` | `00aa3926fe1ddc9e81364b2510332cb018e02c9dcb7f103a21051b63aca503c8` |
+| `toolkit/ggn-blue-night.user.js` | `c4e29ec3b54527566fcff65848dcdaf98555b8a3` | `cc5d4ab0c8bb6e38cdd1815337564297cd8e4d2a65c5d3833394fd6c3fab914a` |
+| `toolkit/features.json` | `3f6fe85bcd2314a3bc4a5829d0530d1eeafb75d4` | `eeb266ec72c2675c34491117d16d184b7c6edb19eaf17632431a23ee8170a484` |
+| `toolkit/harness.html` | `32f6168ecef1d2a77b912e88af17bdf83b7e18dc` | `02af20347cd8041f76a09aa24dfedace5d1ada957289c9355a764ff6ed3dca14` |
+| `toolkit/README.md` | `8e339479759c2efdc9cca9da6b57051a89a3be71` | `78761192ef1a6184e9fbe70a1c278721272e0acd801aeb04c147c31b3dd225b2` |
+
+### 影响文件白名单与明确禁止项
+
+- **阶段 0 白名单（本阶段实际变更）**：只允许 `LIGHT_THEME_PLAN.md`。
+- **后续分析/设计白名单（不改生产代码）**：可新增 `MORANDI_LIGHT_TOKENS.md`、对比度校验脚本/报告等阶段产物；阶段 1 不得修改任何 CSS。
+- **后续实现白名单（仅在相应阶段获用户确认后）**：新增 `ggn-morandi-warm-paper.css` 及必要的预览 harness/说明文件。若必须编辑既有 CSS/JS/HTML 才能安全挂载，先报告具体理由、影响和替代方案，等用户批准后才纳入白名单。
+- **禁止触碰**：深绿生产文件 `ggn-morandi-dark-green.css`、`blue-night_oled.css`、`main` 上的 `README.md` / Toolkit / 字体 / 图片 / SVG；禁止在未获明确最终发布授权时向 `main` 合并、推送、发布新主题；不删除/重写 Git 历史。
+- 分支相对 main 的每个阶段变更应维持可审查的小提交；用文件级差异清单作为允许项校验，不接受夹带的格式化或无关改动。
+
+### 回退方式与发布边界
+
+- 阶段/组件回退：在浅色分支按提交撤销单个阶段（优先新建 `git revert <commit>` 回退提交，不改写公共历史）；必要时直接从 `main` 上对应文件的基线恢复到浅色分支，再重新推送。回退后核对浅色分支相对 `main` 的文件清单。
+- 深绿线上回退：不需要变更 `main`。当前有效主题地址仍为：
+  - Pages：`https://acesaint.github.io/ggn-morandi-1/ggn-morandi-dark-green.css`
+  - jsDelivr：`https://cdn.jsdelivr.net/gh/acesaint/ggn-morandi-1@main/ggn-morandi-dark-green.css`
+  用户若测试浅色版，只在 GGn 的 External CSS 临时替换 URL；要回退时恢复上述深绿地址并硬刷新。
+- **绝不把浅色主题分支设为 Pages 源、绝不把浅色构建推到 `main`、绝不在用户最终验收前改动 main 的 Pages 来源或深绿 URL**。用户必须在阶段 4 完成最终截图验收并明确说“放行发布”，才可以执行单独的阶段 5。
+
+### 基线验证结果
+
+- 远端分支复核：`main`=`82f9d692d3fb7c2cabbe81741695c368e77bcf10`；`morandi-light-warm-paper`=`1a3ff2142ba941c2241ef4eaf549b8c2c99b2ef1`。
+- `git diff --name-status origin/main...origin/morandi-light-warm-paper` 唯一结果：`A LIGHT_THEME_PLAN.md`；净差异 `70 insertions / 0 deletions`。无主题 CSS 被写入或改变。
+- 深绿主题 CSS 本地 SHA-256 与线上 Pages CSS 完全一致：`8ba14f2645564e1ba6a988a410d72661de81da592e533724f27572d90e85b92a`；线上内容 290,893 bytes。新 Pages 与 jsDelivr URL 均实测 `HTTP 200` / `text/css` / 290,893 bytes；旧的 `blue-night_regular.css` Pages 地址为 404，今后使用新文件名地址。
+- Pages API 当前不提供公开读取配置（返回 404），但新文件 Pages URL 已实际可读为 CSS，证实 `main` Pages 构建已生效。**因此不需要改发布地址域名或路径**；继续用 `https://acesaint.github.io/ggn-morandi-1/ggn-morandi-dark-green.css` 即可。
+- 验证边界：完成 Git 基线、哈希、分支差异及公开 HTTP/MIME/字节核对；未做 GGn 登录态浏览器视觉检查，也未做浅色视觉实现。
+
 ## 方向锁定（提案）
 
 **项目**：为 GazelleGames（GGn）制作一款独立的浅色莫兰迪主题，与现有深色 Morandi Dark Green 并行维护。用户已选择方向 A「暖纸感」。
