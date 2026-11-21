@@ -8078,7 +8078,7 @@ img[src="static/common/stars/AwardRating.png"] {
   height: 17px;
   box-sizing: border-box;
   padding-left: 17px;
-  background-color: #ffc107;
+  background-color: var(--fg-warn);
   -webkit-mask: url("assets/icons/ui/star.svg") center / contain no-repeat;
           mask: url("assets/icons/ui/star.svg") center / contain no-repeat;
   background-size: contain;
@@ -8133,7 +8133,7 @@ img[src="static/common/stars/AwardDownloads.png"] {
   height: 17px;
   box-sizing: border-box;
   padding-left: 17px;
-  background-color: #c8212e;
+  background-color: var(--fg-bad);
   -webkit-mask: url("assets/icons/ui/arrow-down.svg") center / contain no-repeat;
           mask: url("assets/icons/ui/arrow-down.svg") center / contain no-repeat;
   background-size: contain;
@@ -8199,7 +8199,7 @@ img[src="static/common/stars/AwardRequests.png"] {
   height: 17px;
   box-sizing: border-box;
   padding-left: 17px;
-  background-color: #2ec9ac;
+  background-color: var(--cat-stream);
   -webkit-mask: url("assets/icons/ui/hand-helping.svg") center / contain no-repeat;
           mask: url("assets/icons/ui/hand-helping.svg") center / contain no-repeat;
   background-size: contain;
@@ -8232,7 +8232,7 @@ img[src="static/common/stars/AwardChat.png"] {
   height: 17px;
   box-sizing: border-box;
   padding-left: 17px;
-  background-color: #c221ad;
+  background-color: var(--cat-birthday);
   -webkit-mask: url("assets/icons/ui/message-circle.svg") center / contain no-repeat;
           mask: url("assets/icons/ui/message-circle.svg") center / contain no-repeat;
   background-size: contain;
@@ -8276,7 +8276,7 @@ img[src="static/common/stars/AwardMetaMeta Awards1.png"] {
   height: 17px;
   box-sizing: border-box;
   padding-left: 17px;
-  background-color: #ffc107;
+  background-color: var(--fg-warn);
   -webkit-mask: url("assets/icons/ui/award.svg") center / contain no-repeat;
           mask: url("assets/icons/ui/award.svg") center / contain no-repeat;
   background-size: contain;
@@ -10184,7 +10184,7 @@ tr.likes > td:last-child > br:has(+ strong + em) {
   margin: 0.4rem 0;
   padding: 0;
   border-top: 1px solid var(--line-2);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow-1);
 }
 
 #user .medals_table > .medal_cell {
@@ -10234,7 +10234,7 @@ tr.likes > td:last-child > br:has(+ strong + em) {
   z-index: -1;
   width: 62px;
   margin: 0 auto;
-  box-shadow: 0 0 9px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-1);
 }
 
 #user .medals_table .primary {
@@ -10256,7 +10256,7 @@ tr.likes > td:last-child > br:has(+ strong + em) {
   font-size: 0.7rem;
   line-height: 1.45;
   text-align: left;
-  background-color: rgba(var(--surface-2-rgb), 0.97);
+  background-color: var(--surface-2);
   border: 1px solid var(--line-2);
   border-radius: 6px;
   opacity: 0;
