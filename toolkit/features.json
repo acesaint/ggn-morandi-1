@@ -28,7 +28,7 @@
       "group": "Appearance",
       "label": "Theme",
       "from": "--ggn-themes",
-      "defaultLabel": "Blue Night",
+      "defaultLabel": "Morandi Dark Green",
       "preview": "ramp",
       "options": [
         {

@@ -20,7 +20,7 @@ The script never contains visual rules. It writes one attribute per setting onto
 <html data-ggn-toolkit="1" data-ggn-mode="light" data-ggn-theme="nocturne">
 ```
 
-`blue-night_regular.css` §10 carries the matching rules. Without the script no attribute is
+`ggn-morandi-dark-green.css` §10 carries the matching rules. Without the script no attribute is
 written, nothing matches, and the theme renders exactly as it does today.
 
 Settings live in `localStorage` under `ggn-blue-night` and are applied at `document-start`,
