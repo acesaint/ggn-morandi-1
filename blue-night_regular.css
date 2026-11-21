@@ -4530,7 +4530,7 @@ ul.nobullet:has(> .similar_group) > li:not(.similar_group) {
   width: 24px;
   height: 24px;
   margin-top: -12px;
-  background-color: rgba(var(--surface-deep-rgb), 0.7);
+  background-color: var(--surface-3);
   border-radius: 4px;
   transition: background-color 0.15s, transform 0.15s;
   z-index: 20;
@@ -4546,7 +4546,7 @@ ul.nobullet:has(> .similar_group) > li:not(.similar_group) {
 
 #slides .prev:hover,
 #slides .next:hover {
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-0);
 }
 
 #slides .prev:hover {
