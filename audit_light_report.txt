@@ -1,0 +1,37 @@
+PASS root tokens match spec (55)                    
+PASS structural parity vs dark body                 !important=367 :has(=239 @media=38 rgba(var(=3
+PASS no live backdrop-filter declarations           0
+PASS rgba(var() limited to 3 functional overlays    L7674; L9582; L12375
+PASS old dark token #202528 absent                  
+PASS old dark token #c8b99d absent                  
+PASS old dark token #8b9a96 absent                  
+PASS old dark token #d1a17c absent                  
+PASS old dark token #77837e absent                  
+PASS alert mix 14% on surface-4                     
+PASS alert link uses fg-accent                      
+PASS hr hairline tokenized                          
+PASS wordmark edge warm base                        
+PASS no brightness(5) white-flash left              
+PASS dialog icons not inverted                      
+PASS drag clone shadow warm                         
+PASS cover wash for light                           
+PASS search input text body-safe                    
+PASS buff hover presses deeper (surface-5)          
+PASS no blue-night swatch selector                  
+PASS blue-night default light block gone            
+PASS all 5 theme variant blocks kept                abyss,oled,graphite,ember,nocturne
+PASS prefers-reduced-motion block present           
+PASS jelly animation exempted in reduce block       
+PASS flickerAnimation removed                       
+PASS keyframes inventory stable                     jelly-effect
+PASS :focus-visible rules present                   2 rules
+PASS body hardcoded colours in documented set       unknown: none | 18 documented hits
+PASS §10 equals dark §10 minus blue-night light blocks light 8523B vs dark-minus 8523B
+PASS site @imports unchanged                        3
+PASS font faces use relative repo paths             12 font refs
+PASS wordmark font embedded as data URI             1
+PASS no dark surface ramp leaked into light         
+PASS contrast suite file present                    run: python3 morandi_light_contrast.py (135 checks)
+
+============================================================
+AUDIT: 34 checks, 0 failures
