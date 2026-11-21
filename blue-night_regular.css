@@ -2158,7 +2158,7 @@ table .colhead > tr > td > a {
 }
 
 table .colhead > td {
-  background: rgba(var(--surface-deep-rgb), 0.9);
+  background: var(--surface-0);
 }
 
 #torrents .main-column table thead tr a {
@@ -2543,7 +2543,7 @@ table .colhead > td {
 
 /* Autocomplete Dropdown Container */
 .autocomplete_list {
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-3);
   position: absolute;
   left: 0;
   width: 100%;
@@ -2620,7 +2620,7 @@ table .colhead > td {
   margin: 0;
   padding: 0;
   overflow-y: auto;
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-3);
   border-radius: 5px;
   box-shadow: var(--shadow-1);
   list-style: none;
