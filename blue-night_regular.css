@@ -2148,7 +2148,7 @@ table .colhead > tr > td > a {
 }
 
 .table > tbody > tr.inbox-message--unread > td {
-  background-color: var(--control) !important;
+  background-color: var(--surface-9) !important;
 }
 
 .table--striped > tbody > tr:nth-child(odd) > td,
