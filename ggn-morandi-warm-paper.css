@@ -2223,7 +2223,7 @@ table .colhead > td {
 }
 
 .global_buffs a:hover {
-  background: var(--surface-4);
+  background: var(--surface-5);
   border-color: var(--fg-accent);
 }
 
@@ -2532,7 +2532,7 @@ table .colhead > td {
   top: 0;
   background-color: var(--surface-0);
   font-size: 0.8em;
-  color: var(--ink-8);
+  color: var(--ink-4);
   border: 1px solid var(--line-2);
   border-radius: 5px;
   padding: 2px 3px;
