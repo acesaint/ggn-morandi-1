@@ -2756,7 +2756,7 @@ img.avatar {
   padding: 0.75rem 1rem;
 }
 .box .head {
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-0);
   border: none;
   padding: 7px;
 }
@@ -4139,10 +4139,10 @@ div.show_torrents {
   margin: 0;
   padding: 0;
   list-style: none;
-  background: rgba(var(--surface-deep-rgb), 0.97);
+  background: var(--surface-3);
   border: 1px solid var(--line-2);
   border-radius: 0 5px 5px 5px;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.45);
+  box-shadow: var(--shadow-1);
   z-index: 800;
   min-width: 250px;
   max-width: 380px;
@@ -11013,7 +11013,7 @@ html {
 .screenshots a:hover img {
   transform: scale(2);
   border-color: var(--fg-accent);
-  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.55);
+  box-shadow: var(--shadow-2);
 }
 
 .curtain:not(.hidden) {
@@ -11055,7 +11055,7 @@ html {
   max-height: 100%;
   background: var(--surface-2);
   border-radius: 5px;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow-3);
 }
 
 /****************************************************************************
