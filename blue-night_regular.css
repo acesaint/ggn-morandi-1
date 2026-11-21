@@ -2669,7 +2669,7 @@ table .colhead > td {
   max-width: 100%;
   max-height: 320px;
   overflow-y: auto;
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-3);
   border-radius: 5px;
   box-shadow: var(--shadow-1);
 }
