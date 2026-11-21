@@ -11758,7 +11758,7 @@ colgroup,
   margin: 0;
   object-fit: cover;
   object-position: top center;
-  box-shadow: 0 0.5rem 1rem rgba(7, 11, 22, 0.55);
+  box-shadow: var(--shadow-1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
