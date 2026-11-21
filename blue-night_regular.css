@@ -3055,7 +3055,7 @@ span.spoiler-show * {
 }
 
 .colhead_dark {
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-0);
   padding: 7px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -9376,7 +9376,7 @@ table.forum_post.forum_unread {
   background: var(--surface-3) !important;
   border: 1px solid var(--line-1);
   border-radius: 6px !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45) !important;
+  box-shadow: var(--shadow-3) !important;
   text-align: left !important;
 }
 #userinfo .sub {
@@ -9392,7 +9392,7 @@ table.forum_post.forum_unread {
 }
 
 .sub:has(+ .forum_post) a:hover {
-  background: var(--line-1) !important;
+  background: var(--surface-5) !important;
   color: var(--ink-0) !important;
 }
 
@@ -11874,7 +11874,7 @@ colgroup,
 }
 
 .timeline-nav-button:hover {
-  background-color: var(--line-2);
+  background-color: var(--surface-9);
   border-color: var(--fg-accent);
   box-shadow: none;
 }
