@@ -3860,7 +3860,7 @@ img[src="static/forums/locked_read.png"] {
   left: 0;
   width: 100%;
   height: auto;
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-3);
   padding: 0.5rem 0;
   margin: 0 auto;
   text-align: center;
@@ -7583,7 +7583,7 @@ body#user .user_title {
 
 .ui-dialog .ui-dialog-titlebar {
   padding: 10px 14px !important;
-  background: rgba(var(--surface-deep-rgb), 0.92) !important;
+  background: var(--surface-0) !important;
   border: none !important;
   border-bottom: 1px solid var(--line-2) !important;
   border-radius: 0 !important;
@@ -7865,7 +7865,7 @@ body#user .user_title {
 .r50,
 .r99 {color: var(--state-leeching);}
 #us_pop {
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-3);
   position: absolute;
   z-index: 10;
   left: 0;
@@ -7906,7 +7906,7 @@ body#user .user_title {
 
 /* Main Menu */
 #menu {
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-3);
   width: 100%;
   margin: 5px auto 10px auto;
   font-size: 10pt;
@@ -8390,7 +8390,7 @@ img[src="static/common/stars/AwardMetaMeta Awards1.png"] {
   width: 44px;
   height: 44px;
   font-size: 0;
-  background-color: rgba(var(--surface-deep-rgb), 0.7);
+  background-color: var(--surface-3);
   border: 1px solid var(--line-2);
   border-radius: 6px;
   pointer-events: auto;
@@ -8407,7 +8407,7 @@ img[src="static/common/stars/AwardMetaMeta Awards1.png"] {
 }
 
 #toplink a:hover {
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-0);
   border-color: var(--line-3);
 }
 
@@ -10392,7 +10392,7 @@ tr.likes > td:last-child > br:has(+ strong + em) {
 }
 
 .qtip-dark .qtip-titlebar {
-  background-color: rgba(var(--surface-deep-rgb), 0.9);
+  background-color: var(--surface-0);
   border-bottom: 1px solid var(--line-2);
   color: var(--ink-1);
 }
